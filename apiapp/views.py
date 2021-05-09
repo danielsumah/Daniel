@@ -17,6 +17,19 @@ from rest_framework.response import Response
 from .models import Student
 from .serializers import StudentSerializers
 
-class StudentViews(generics.CreateAPIView):
+class CreateStudentViews(generics.CreateAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializers
+
+class ReadStudentViews(generics.ListAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializers
+
+class UpdateStudentViews(generics.UpdateAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializers
+    
+class DeleteStudentViews(generics.DestroyAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializers
+
