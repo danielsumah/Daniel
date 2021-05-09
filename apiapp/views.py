@@ -25,6 +25,15 @@ class ReadStudentViews(generics.ListAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializers
 
+class StudentDetailViews(generics.RetrieveAPIView):
+    queryset = Student.objects.all()
+    serializer_class = StudentSerializers
+
+# class RetrieveUserView(MultipleFieldLookupMixin, generics.RetrieveAPIView):
+#     queryset = User.objects.all()
+#     serializer_class = UserSerializer
+#     lookup_fields = ['account', 'username']
+
 class UpdateStudentViews(generics.UpdateAPIView):
     queryset = Student.objects.all()
     serializer_class = StudentSerializers
